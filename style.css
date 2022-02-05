@@ -44,9 +44,8 @@
 }
 
 @font-face {
-    font-family: Subway Six-Inch;
-    src: url("fonts/Subway.woff2") format("woff2"), /* chrome firefox */
-    url("fonts/Subway.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    font-family: Subway;
+    src: url("fonts/Subway.woff2")
 }
 
 * {
@@ -54,7 +53,7 @@
 }
 body {
     background-color:#fff;    
-    font-family: Subway Six-Inch,Helvetica,Arial;
+    font-family: Subway, Helvetica, Arial;
     font-size:15px;
     margin:0;
 }
