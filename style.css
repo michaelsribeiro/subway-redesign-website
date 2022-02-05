@@ -44,7 +44,7 @@
 }
 
 @font-face {font-family: "Subway Six-Inch";
-    src: url("http://db.onlinewebfonts.com/t/7c39c9fe812af964ffcfafcdb4b605fc.woff") format("woff"), /* chrome firefox */
+    src: url("fonts/Subway.ttf") format("woff"), /* chrome firefox */
     url("http://db.onlinewebfonts.com/t/7c39c9fe812af964ffcfafcdb4b605fc.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
 }
 
