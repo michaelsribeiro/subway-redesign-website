@@ -1,0 +1,773 @@
+@-webkit-keyframes tada {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    10%, 20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%, 50%, 70%, 90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%, 60%, 80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes tada {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    10%, 20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%, 50%, 70%, 90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%, 60%, 80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+} 
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color:#fff;    
+    font-family: 'Subway Six-Inch',Helvetica,Arial;
+    font-size:15px;
+    margin:0;
+}
+.models {
+    display:none;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height:80px;
+    background-color:#fff;
+    z-index: 300;
+    box-shadow:10px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+}
+
+.logo img{
+    width: 160px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex: 3;
+}
+
+.menu nav {
+    width: 100%;
+}
+
+.nav-bar {
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-bar a {
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s linear;
+}
+
+.nav-bar a:hover {
+    color: #028940;
+}
+
+.nav-bar a:last-child {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    background-color: #ffcc00;
+    transition: all .3s ease;
+    
+    -webkit-animation-name: tada;
+    animation-name: tada;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.nav-bar a:last-child:hover {
+    background-color: #cfa707;
+}
+
+.nav-button {
+    display: inline-block;
+}
+/*.menu-openner {
+    margin-right: 15px;
+    font-size: 26px;
+    background-color: #a9dcff;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.menu-openner span {
+    margin-right:10px;
+}*/
+.menu-closer {
+    width:32px;
+    height:32px;
+    display:none;
+    font-size: 30px;
+}
+
+.carousel { 
+    flex: 1; 
+    overflow: hidden;
+    padding-top: 80px;
+    height: calc(100vh - 80px);
+    z-index: 1;
+}
+
+.carousel-dots {
+    display: none;
+}
+
+.carousel-inner {
+    height: 100%;
+    display: flex;
+    transition: all ease .8s;
+}
+
+.carousel-item {
+    width: 100vw;
+    height: inherit;
+}
+
+.first {
+    background-image: url('images/banner-01.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.second {
+    background-image: url('images/banner-02.png');
+    background-size: cover;
+    background-position: center;
+}
+
+aside {
+    display: none;
+    background-color:#9ccbe6;
+    width:0vw;
+    transition:all ease .2s;
+    overflow-x: hidden;
+}
+aside.show {
+    width:30vw;
+}
+.cart--area {
+    padding:20px;
+}
+.foodMenu {
+    width: 100%;
+    padding: 20px 0;
+}
+.foodMenu h2 {
+    color: #028940;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.banner-section {
+    width: 100%;
+    height: 90vh;
+    background-image: url('images/hero-eating-wrap.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-section .mask {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-section .mask h1 {
+    padding: 20px 15px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 40px;
+    background-color: #028940;
+}
+
+.pizza-area {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.pizza-item {
+    text-align: center;
+    max-width:250px;
+    margin:0 auto 50px auto;
+}
+.pizza-item a {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    text-decoration: none;
+}
+.pizza-item--img {
+    width:320px;
+    height:180px;
+}
+.pizza-item--img img {
+    width:100%;
+}
+.pizza-item--add {
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius:25px;
+    background-color:#ffcc00;
+    text-align:center;
+    color:#FFF;
+    font-size:22px;
+    cursor:pointer;
+    margin-top:-25px;
+    transition:all ease .2s;
+}
+.pizza-item a:hover .pizza-item--add {
+    background-color:#cfa707;
+}
+.pizza-item--price {
+    font-size:15px;
+    font-weight: 600;
+    color:#333;
+    margin-top:5px;
+}
+.pizza-item--name {
+    font-size:18px;
+    font-weight: bold;
+    color:#028940;
+    margin-top:5px;
+}
+.pizza-item--desc {
+    font-size:13px;
+    color:#555;
+    margin-top:10px;
+}
+
+.pizzaWindowArea {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(255, 255, 255, 0.5);
+    display:none;
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+}
+.pizzaWindowBody {
+    width:900px;
+    background-color:#FFF;
+    border-radius:10px;
+    box-shadow:0px 0px 15px #999;
+    display:flex;
+    margin:20px 0px;
+}
+.pizzaBig {
+    flex:1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.pizzaBig--back {
+    position:absolute;
+    width:30px;
+    height:30px;
+    background-color:#000;
+}
+.pizzaBig img {
+    height:400px;
+    width:auto;
+}
+.pizzaInfo {
+    flex:1;
+    font-family:'Hepta Slab', Helvetica, Arial;
+    padding-bottom:50px;
+}
+.pizzaInfo h1 {
+    margin-top:50px;
+}
+.pizzaInfo .pizzaInfo--desc {
+    font-size:15px;
+    color:#999;
+    margin-top:10px;
+    font-family:'Lato',Helvetica,Arial;
+}
+.pizzaInfo--sector {
+    color:#CCC;
+    text-transform: uppercase;
+    font-size:14px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.pizzaInfo--sizes {
+    display:inline-flex;
+    border-radius:10px;
+    overflow:hidden;
+}
+.pizzaInfo--size {
+    padding:10px 15px;
+    color:#000;
+    background-color:#EEE;
+    font-size:13px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.pizzaInfo--size:hover {
+    background-color:#CCC;
+}
+.pizzaInfo--size.selected {
+    background-color:#399ade;
+    color:#FFF;
+}
+.pizzaInfo--size.selected span {
+    color:#D6D6D6;
+}
+.pizzaInfo--size span {
+    font-size:12px;
+    color:#999;
+    font-weight: normal;
+}
+.pizzaInfo--price {
+    display:flex;
+    align-items:center;
+}
+.pizzaInfo--actualPrice {
+    font-size:28px;
+    margin-right:30px;
+}
+.pizzaInfo--qtarea {
+    display:inline-flex;
+    background-color:#EEE;
+    border-radius:10px;
+    height:30px;
+}
+.pizzaInfo--qtarea button {
+    border:0;
+    background-color:transparent;
+    font-size:17px;
+    outline:0;
+    cursor:pointer;
+    padding:0px 10px;
+    color:#333;
+}
+.pizzaInfo--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color:#000;
+}
+.pizzaInfo--addButton {
+    margin-top:30px;
+    padding:20px 30px;
+    border-radius:20px;
+    background-color:#48d05f;
+    color:#FFF;
+    display:inline-block;
+    cursor:pointer;
+    margin-right:30px;
+}
+.pizzaInfo--addButton:hover {
+    background-color:#32a345;
+}
+.pizzaInfo--cancelButton {
+    display:inline-block;
+    cursor:pointer;
+}
+.pizzaInfo--cancelMobileButton {
+    display:none;
+    height:40px;
+    text-align:center;
+    line-height: 40px;
+    margin-bottom:30px;
+}
+.cart {
+    margin-bottom:20px;
+}
+.cart--item {
+    display:flex;
+    align-items:center;
+    margin:10px 0;
+}
+.cart--item img {
+    width:40px;
+    height:40px;
+    margin-right:20px;
+}
+.cart--item-nome {
+    flex:1;
+}
+.cart--item--qtarea {
+    display:inline-flex;
+    background-color:#EEE;
+    border-radius:10px;
+    height:30px;
+}
+.cart--item--qtarea button {
+    border:0;
+    background-color:transparent;
+    font-size:17px;
+    outline:0;
+    cursor:pointer;
+    padding:0px 10px;
+    color:#333;
+}
+.cart--item--qt {
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 5px;
+    color:#000;
+}
+.cart--totalitem {
+    padding:15px 0;
+    border-top:1px solid #79b9dd;
+    color:#315970;
+    display:flex;
+    justify-content: space-between;
+    font-size:15px;
+}
+.cart--totalitem span:first-child {
+    font-weight: bold;
+}
+.cart--totalitem.big {
+    font-size:20px;
+    color:#000;
+    font-weight: bold;
+}
+.cart--finalizar {
+    padding:20px 30px;
+    border-radius:20px;
+    background-color:#48d05f;
+    color:#FFF;
+    cursor:pointer;
+    text-align:center;
+    margin-top:20px;
+    border:2px solid #63f77c;
+    transition: all ease .2s;
+}
+.cart--finalizar:hover {
+    background-color:#35af4a;
+}
+
+footer {
+    width: 100%;
+}
+
+footer .container {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .logo {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .logo img {
+    width: 190px;
+}
+
+.footer-menu {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.firstMenu {
+    flex: 1;
+}
+
+.firstMenu h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.firstMenu .footer-items {
+    padding: 0;
+    list-style: none;
+}
+
+.firstMenu .footer-items a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.firstMenu .footer-items a:hover {
+    color: #028940;
+}
+
+.firstMenu .footer-items .footer-button {
+    padding: 5px 0;
+}
+
+.secondMenu {
+    flex: 1;
+}
+
+.secondMenu h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.secondMenu .footer-items {
+    padding: 0;
+    list-style: none;
+}
+
+.secondMenu .footer-items a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.secondMenu .footer-items a:hover {
+    color: #028940;
+}
+
+.secondMenu .footer-items .footer-button {
+    padding: 5px 0;
+}
+
+.socialMidias {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMidias h2 {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.socialMidias .footer-button i {
+    color: #333;
+    font-size: 20px;
+    transition: all .3s ease;
+}
+
+.socialMidias .footer-button i:hover {
+    color: #028940;
+}
+
+.socialMidias .footer-items {
+    list-style: none;
+    padding: 0;
+}
+
+.socialMidias .footer-items a {    
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.socialMidias .footer-button {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.copy {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #028940;
+}
+
+.copy .copyright {
+    margin: 0;
+    color: #fff;
+    font-size: 13px;
+}
+
+@media (max-width:1000px) {
+    .pizza-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:840px) {
+    body {
+        flex-direction: column;
+    }
+    .pizza-area {
+        display:block;
+    }
+    .pizza-item {
+        max-width:100%;
+    }
+    header {
+        display:flex;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .carousel { 
+        height: calc(50vh - 80px);
+    }
+
+    .carousel-dots {
+        display: none;
+    }
+
+    .first {
+        background-position: center;
+    }
+
+    .foodMenu {
+        padding-top:0;
+    }
+
+    .banner-section {
+        height: 70vh;
+    }
+
+    .banner-section .mask h1 {
+        font-size: 30px;
+    }
+
+    aside {
+        width:auto;
+        position:fixed;
+        left:100vw;
+        right:0;
+        top:0;
+        bottom:0;
+        transition: all ease .2s;
+    }
+    aside.show {
+        width:auto;
+    }
+    .cart--area {
+        width:100vw;
+    }
+
+    .menu-closer {
+        display:block;
+    }
+
+    .pizzaWindowArea {
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+
+    .pizzaWindowBody {
+        width:100vw;
+        display:block;
+        padding:20px;
+        border-radius:0;
+        box-shadow:none;
+        margin:0;
+    }
+
+    .pizzaBig img {
+        width: 75%;
+        height: auto;
+    }
+
+    .pizzaInfo h1 {
+        margin-top:20px;
+    }
+
+    .pizzaInfo--qtarea {
+        height:60px;
+    }
+    .pizzaInfo--qtarea button {
+        font-size:25px;
+        padding:0px 25px;
+    }
+    .pizzaInfo--qt {
+        line-height: 60px;
+        font-size:20px;
+    }
+    .pizzaInfo--addButton {
+        font-size:20px;
+        display:block;
+        text-align:center;
+        margin:30px auto;
+    }
+
+    .pizzaInfo--cancelButton {
+        display:none;
+    }
+    .pizzaInfo--cancelMobileButton {
+        display:block;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+    }
+
+    .copy .copyright {
+        text-align: center;
+    }
+}
