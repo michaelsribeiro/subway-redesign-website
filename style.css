@@ -56,6 +56,7 @@ body {
     font-family: Subway, Helvetica, Arial;
     font-size:15px;
     margin:0;
+    position: relative;
 }
 .models {
     display:none;
@@ -126,12 +127,11 @@ header {
     font-weight: 700;
     background-color: #ffcc00;
     transition: all .3s ease;
-    
-    -webkit-animation-name: tada;
+}
+
+.animation {
     animation-name: tada;
-    -webkit-animation-duration: 1s;
     animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
 
@@ -194,18 +194,23 @@ header {
     background-position: center;
 }
 
-aside {
-    display: none;
+.cartsection {
+    width: 0vw;
+    height: 100vh;    
     background-color:#9ccbe6;
-    width:0vw;
-    transition:all ease .2s;
+    transition:all ease .3s;
     overflow-x: hidden;
+    z-index: 200;
+
+    position: fixed;
+    top: 0;
 }
-aside.show {
+.cartsection.show {
     width:30vw;
+    right: 0;
 }
 .cart--area {
-    padding:20px;
+    padding:90px 20px 20px;
 }
 .foodMenu {
     width: 100%;
@@ -313,6 +318,7 @@ aside.show {
     justify-content: center;
     align-items: center;
     overflow-y:auto;
+    z-index: 500;
 }
 .pizzaWindowBody {
     width:900px;
@@ -335,29 +341,54 @@ aside.show {
     background-color:#000;
 }
 .pizzaBig img {
-    height:400px;
+    height:280px;
     width:auto;
 }
 .pizzaInfo {
     flex:1;
-    font-family:'Hepta Slab', Helvetica, Arial;
-    padding-bottom:50px;
+    font-family: Subway, Helvetica, Arial;
+    padding-bottom:30px;
 }
 .pizzaInfo h1 {
-    margin-top:50px;
+    margin-top:30px;
 }
 .pizzaInfo .pizzaInfo--desc {
     font-size:15px;
     color:#999;
     margin-top:10px;
-    font-family:'Lato',Helvetica,Arial;
+    font-family: Subway,Helvetica,Arial;
 }
 .pizzaInfo--sector {
     color:#CCC;
     text-transform: uppercase;
     font-size:14px;
-    margin-top:30px;
+    margin-top:15px;
     margin-bottom:10px;
+}
+.pizzaInfo--breadarea {
+    width: 90%;
+}
+#bread {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+.pizzaInfo--saladarea {
+    width: 90%;
+}
+.pizzaInfo--saladitem {
+    display: flex;
+    flex-direction: column;
+}
+.pizzaInfo--row {
+    display: flex;
+    justify-content: space-between;
+}
+.pizzaInfo--rowItem {
+    font-size: 13px;
+}
+.pizzaInfo--saucearea {
+    width: 90%;
 }
 .pizzaInfo--sizes {
     display:inline-flex;
@@ -376,7 +407,7 @@ aside.show {
     background-color:#CCC;
 }
 .pizzaInfo--size.selected {
-    background-color:#399ade;
+    background-color:#48d05f;
     color:#FFF;
 }
 .pizzaInfo--size.selected span {
@@ -546,9 +577,9 @@ footer .logo img {
 
 .firstMenu h2 {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 20px;    
+    color: #028940;
 }
-
 .firstMenu .footer-items {
     padding: 0;
     list-style: none;
@@ -575,7 +606,8 @@ footer .logo img {
 
 .secondMenu h2 {
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 20px;    
+    color: #028940;
 }
 
 .secondMenu .footer-items {
@@ -609,6 +641,7 @@ footer .logo img {
 .socialMidias h2 {
     text-transform: uppercase;
     font-size: 20px;
+    color: #028940;
 }
 
 .socialMidias .footer-button i {
@@ -735,14 +768,29 @@ footer .logo img {
     }
 
     .pizzaBig img {
-        width: 75%;
+        width: 100%;
         height: auto;
     }
 
     .pizzaInfo h1 {
         margin-top:20px;
     }
-
+    .pizzaInfo--breadarea{
+        width: 100%;
+    }
+    .pizzaInfo--saladarea {
+        width: 100%;
+    }
+    .pizzaInfo--saucearea {
+        width: 100%;
+    }
+    .pizzaInfo--row {
+        width: 100%;
+        display: block;
+    }
+    .pizzaInfo--rowItem {
+        margin-bottom: 5px;
+    }
     .pizzaInfo--qtarea {
         height:60px;
     }

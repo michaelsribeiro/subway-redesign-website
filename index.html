@@ -49,7 +49,7 @@
                         <a href=""><li class="nav-button">Carreira</li></a>
                         <a href=""><li class="nav-button">Contato</li></a>
                         <a href=""><li class="nav-button">Social</li></a>
-                        <a href=""><li class="nav-button">Peça já o seu!</li></a>
+                        <a href="#foodMenu"><li class="nav-button buyButton">Peça já o seu!</li></a>
                     </ul>
                 </nav>
             </div>
@@ -65,17 +65,39 @@
             <div class="carousel-item second"></div>
         </div>
     </main>
-    <section data-aos="fade-up" data-aos-duration="1500" class="foodMenu">
+    <section class="foodMenu" id="foodMenu">
         <h2>Clique no seu Sub favorito <br/>e peça já!</h2>
-        <div class="pizza-area"></div>
+        <div data-aos="fade-up" data-aos-duration="1500" class="pizza-area"></div>
     </section>
     <section class="banner-section">
         <div class="mask">            
             <h1 data-aos="fade-up" data-aos-duration="1500">A melhor <br/>
                 companhia<br/>
-                que você vai ter!</h1>
+                que você vai ter <br/>hoje</h1>
         </div>
-    </section>  
+    </section>
+    <div class="cartsection">
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Suas Pizzas</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem desconto">
+                    <span>Desconto (-10%)</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--finalizar">Finalizar a compra</div>
+            </div>
+        </div>
+    </div>  
     <footer>
         <div class="container">
             <div  data-aos="fade-up" data-aos-duration="1500" class="logo">
@@ -117,28 +139,7 @@
             <p class="copyright">&copy; 2022 Subway - Todos os direitos reservados - Feito por Michael Ribeiro</p>
         </div>
     </footer>
-    <aside>
-        <div class="cart--area">
-            <div class="menu-closer">❌</div>
-            <h1>Suas Pizzas</h1>
-            <div class="cart"></div>
-            <div class="cart--details">
-                <div class="cart--totalitem subtotal">
-                    <span>Subtotal</span>
-                    <span>R$ --</span>
-                </div>
-                <div class="cart--totalitem desconto">
-                    <span>Desconto (-10%)</span>
-                    <span>R$ --</span>
-                </div>
-                <div class="cart--totalitem total big">
-                    <span>Total</span>
-                    <span>R$ --</span>
-                </div>
-                <div class="cart--finalizar">Finalizar a compra</div>
-            </div>
-        </div>
-    </aside>
+    
     <div class="pizzaWindowArea">
         <div class="pizzaWindowBody">
             <div class="pizzaInfo--cancelMobileButton">Voltar</div>
@@ -151,9 +152,73 @@
                 <div class="pizzaInfo--sizearea">
                     <div class="pizzaInfo--sector">Tamanho</div>
                     <div class="pizzaInfo--sizes">
-                        <div data-key="0" class="pizzaInfo--size">PEQUENA <span>--</span></div>
-                        <div data-key="1" class="pizzaInfo--size">MÉDIO <span>--</span></div>
-                        <div data-key="2" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
+                        <div data-key="0" class="pizzaInfo--size">15 centímetros</div>
+                        <div data-key="1" class="pizzaInfo--size selected">30 centímetros</div>
+                    </div>
+                </div>
+                <div class="pizzaInfo--breadarea">
+                    <div class="pizzaInfo--sector">Escolha seu pão</div>
+                    <select name="bread" id="bread" class="required">
+                        <option value="" disabled="disabled"></option>
+                        <option value="9 grãos">9 Grãos</option>
+                        <option value="Aveia e Mel">Aveia e Mel</option>
+                        <option value="Italiano Branco">Italiano Branco</option>
+                        <option value="Italiano Branco">Parmesão com Orégano</option>
+                        <option value="Italiano Branco">Três Queijos</option>
+                    </select>
+                </div>
+                <div class="pizzaInfo--saladarea">
+                    <div class="pizzaInfo--sector">Acompanhamentos</div>
+                    <div class="pizzaInfo--saladitem">
+                        <div class="pizzaInfo--row">
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Alface">Alface
+                            </div>
+                            <div class="pizzaInfo--rowItem">                                
+                            <input type="checkbox" name="Tomate" id="">Tomate
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Aceitona Preta" id="">Azeitona Preta
+                            </div>
+                        </div>
+                        <div class="pizzaInfo--row">
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Cebola Roxa" id="">Cebola Roxa
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Picles" id="">Picles
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Picles" id="">Pimentão
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pizzaInfo--saucearea">
+                    <div class="pizzaInfo--sector">Escolha seu molho</div>
+                    <div class="pizzaInfo--sauceitem">
+                        <div class="pizzaInfo--row">
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Maionese" id="">Maionese
+                            </div>
+                            <div class="pizzaInfo--rowItem">                                
+                            <input type="checkbox" name="BBQ" id="">Barbecue
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Mostarda" id="">Mostarda
+                            </div>
+                        </div>
+                        <div class="pizzaInfo--row">
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Mostarda e Mel" id="">Mostarda e Mel
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Cebola Agridoce" id="">Cebola Agridoce
+                            </div>
+                            <div class="pizzaInfo--rowItem">
+                                <input type="checkbox" name="Parmesãao" id="">Parmesão
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="pizzaInfo--pricearea">
