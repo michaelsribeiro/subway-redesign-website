@@ -150,8 +150,17 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click', () => 
     updateCart();
 });
 
+document.querySelector('.cartsection .menu-closer').addEventListener('click', () => {
+    document.querySelector('.cartsection').classList.remove('show');
+});
+
 function updateCart() {
     if (cart.length > 0) {
         document.querySelector('.cartsection').classList.add('show');
+
+        
+    } else {
+        document.querySelector('.cartsection').classList.remove('show');
+        document.querySelector('.cartsection').style.left = '100vw';
     }
 }

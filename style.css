@@ -198,9 +198,9 @@ header {
     width: 0vw;
     height: 100vh;    
     background-color:#9ccbe6;
-    transition:all ease .3s;
+    transition: all ease .3s;
     overflow-x: hidden;
-    z-index: 200;
+    z-index: 400;
 
     position: fixed;
     top: 0;
@@ -733,17 +733,16 @@ footer .logo img {
         font-size: 30px;
     }
 
-    aside {
-        width:auto;
+    .cartsection {
+        width: 0;
         position:fixed;
-        left:100vw;
         right:0;
         top:0;
         bottom:0;
         transition: all ease .2s;
     }
-    aside.show {
-        width:auto;
+    .cartsection.show {
+        width:100vw;
     }
     .cart--area {
         width:100vw;
@@ -752,7 +751,6 @@ footer .logo img {
     .menu-closer {
         display:block;
     }
-
     .pizzaWindowArea {
         justify-content:flex-start;
         align-items: flex-start;
