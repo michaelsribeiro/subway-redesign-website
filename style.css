@@ -195,23 +195,39 @@ header {
 }
 
 .cartsection {
-    width: 0vw;
+    width: 25vw;
     height: 100vh;    
-    background-color:#9ccbe6;
+    background-color:#fff;
     transition: all ease .3s;
-    overflow-x: hidden;
     z-index: 400;
+    overflow-x: hidden;
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2);
 
     position: fixed;
     top: 0;
+    right: 0;
 }
 .cartsection.show {
-    width:30vw;
+    width: 25vw;
     right: 0;
 }
 .cart--area {
-    padding:90px 20px 20px;
+    padding: 20px;
 }
+.cart--area h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.cart--details .desconto {
+    display: none;
+}
+
+.cart--details .subtotal {
+    display: none;
+}
+
 .foodMenu {
     width: 100%;
     padding: 20px 0;
@@ -268,6 +284,7 @@ header {
 .pizza-item--img {
     width:320px;
     height:180px;
+    overflow: hidden;
 }
 .pizza-item--img img {
     width:100%;
@@ -478,21 +495,24 @@ header {
 .cart--item {
     display:flex;
     align-items:center;
-    margin:10px 0;
+    justify-content: space-evenly;
+    margin:20px 0;
 }
 .cart--item img {
-    width:40px;
+    width:70px;
     height:40px;
-    margin-right:20px;
+    margin-right:10px;
+    display: none;
 }
 .cart--item-nome {
-    flex:1;
+    flex: 1;
 }
 .cart--item--qtarea {
     display:inline-flex;
     background-color:#EEE;
     border-radius:10px;
     height:30px;
+    margin: 0 20px;
 }
 .cart--item--qtarea button {
     border:0;
@@ -503,6 +523,10 @@ header {
     padding:0px 10px;
     color:#333;
 }
+.cart--item-price {
+    flex: 1;
+    text-align: center;
+}
 .cart--item--qt {
     line-height: 30px;
     font-size: 12px;
@@ -511,31 +535,39 @@ header {
     color:#000;
 }
 .cart--totalitem {
-    padding:15px 0;
-    border-top:1px solid #79b9dd;
+    padding:20px 0;
+    border-top:1px solid #ddd;
     color:#315970;
     display:flex;
     justify-content: space-between;
-    font-size:15px;
+    font-size:10px;
 }
-.cart--totalitem span:first-child {
-    font-weight: bold;
-}
-.cart--totalitem.big {
-    font-size:20px;
+
+.cart--totalitem.big {    
+    font-size:17px;
     color:#000;
-    font-weight: bold;
+}
+.fixedArea {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
 }
 .cart--finalizar {
-    padding:20px 30px;
-    border-radius:20px;
+    padding:15px 20px;
+    border-radius:10px;
     background-color:#48d05f;
     color:#FFF;
     cursor:pointer;
     text-align:center;
     margin-top:20px;
-    border:2px solid #63f77c;
     transition: all ease .2s;
+    font-size: 17px;
 }
 .cart--finalizar:hover {
     background-color:#35af4a;
