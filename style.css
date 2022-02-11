@@ -791,6 +791,9 @@ footer .logo img {
     .cart--area {
         width:100vw;
     }
+    .fixedArea {
+        position: fixed;
+    }
     .pizzaWindowArea {
         justify-content:flex-start;
         align-items: flex-start;
