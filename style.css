@@ -525,8 +525,7 @@ header {
     color:#333;
 }
 .cart--item-price {
-    flex: 1;
-    text-align: center;
+    text-align: right;
 }
 .cart--item--qt {
     line-height: 30px;
@@ -786,15 +785,6 @@ footer .logo img {
         font-size: 30px;
     }
 
-    .cartsection {
-        width: 0;
-        height: 100vh;
-        position:fixed;
-        right:0;
-        top:0;
-        bottom:0;
-        transition: all ease .2s;
-    }
     .cartsection.show {
         width:100vw;
     }
