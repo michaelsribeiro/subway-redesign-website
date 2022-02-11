@@ -151,7 +151,7 @@ document.querySelector('.pizzaInfo--addButton').addEventListener('click', () => 
     updateCart();
 });
 
-document.querySelector('.cartsection .menu-closer').addEventListener('click', () => {
+document.querySelector('.cartsection .cart--backBtn').addEventListener('click', () => {
     document.querySelector('.cartsection').classList.remove('show');
 });
 
@@ -168,18 +168,27 @@ function updateCart() {
             total += pizzaItem.price * cart[i].qtCart;
             totalItem += cart[i].price * cart[i].qtCart;
 
-            console.log(cart[i].price);
-
             cartItem.querySelector('img').src = pizzaItem.img;
             cartItem.querySelector('.cart--item-nome').innerHTML = pizzaItem.name;
             cartItem.querySelector('.cart--item-price').innerHTML = `${pizzaItem.price.toLocaleString('pt-br',{ style:'currency', currency: 'BRL' })}`;
-
+            cartItem.querySelector('.cart--item--qt').innerHTML = cart[i].qtCart;
+            cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', () => {
+                if (cart[i].qtCart > 1) {
+                    cart[i].qtCart -= 1;
+                } else {
+                    cart.splice(i, 1);
+                }                
+                updateCart();
+            });
+            cartItem.querySelector('.cart--item-qtmais').addEventListener('click', () => {
+                cart[i].qtCart++;
+                updateCart();
+            });
             document.querySelector('.cart').append( cartItem );
         }
 
         document.querySelector('.total span:last-child').innerHTML = `${total.toLocaleString('pt-br',{ style:'currency', currency: 'BRL' })}`;
     } else {
         document.querySelector('.cartsection').classList.remove('show');
-        document.querySelector('.cartsection').style.left = '100vw';
     }
 }

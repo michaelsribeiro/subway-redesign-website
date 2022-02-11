@@ -52,6 +52,7 @@
     box-sizing: border-box;
 }
 body {
+    overflow-x: hidden;
     background-color:#fff;    
     font-family: Subway, Helvetica, Arial;
     font-size:15px;
@@ -195,13 +196,13 @@ header {
 }
 
 .cartsection {
-    width: 25vw;
+    width: 0;
     height: 100vh;    
     background-color:#fff;
     transition: all ease .3s;
     z-index: 400;
     overflow-x: hidden;
-    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow:0px 0px 10px rgba(0, 0, 0, 0.15);
 
     position: fixed;
     top: 0;
@@ -549,28 +550,48 @@ header {
 }
 .fixedArea {
     width: 100%;
+    padding: 20px 0;
+
     bottom: 0;
     left: 0;
-    padding: 20px 0;
-    position: fixed;
+    position: absolute;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #fff;
 }
 .cart--finalizar {
+    width: 90%;
     padding:15px 20px;
-    border-radius:10px;
+    border-radius:5px;
     background-color:#48d05f;
     color:#FFF;
     cursor:pointer;
     text-align:center;
-    margin-top:20px;
+    margin-top:10px;
     transition: all ease .2s;
     font-size: 17px;
 }
 .cart--finalizar:hover {
     background-color:#35af4a;
+}
+
+.cart--backBtn {
+    width: 90%;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+    background-color: transparent;
+
+    text-align: center;;
+    font-size: 17px;
+
+    cursor: pointer;
+    transition: all ease .2s
 }
 
 footer {
@@ -778,10 +799,6 @@ footer .logo img {
     }
     .cart--area {
         width:100vw;
-    }
-
-    .menu-closer {
-        display:block;
     }
     .pizzaWindowArea {
         justify-content:flex-start;
