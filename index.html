@@ -22,14 +22,33 @@
             <div data-aos="fade-right" data-aos-duration="1500" class="logo">
                 <img src="assets/images/logo.png" alt="Subway Logo">
             </div>
-            <div data-aos="fade-left" data-aos-duration="1500" class="menu">
-                <nav>
+            <div data-aos="fade-left" data-aos-duration="1500" class="menu">                               
+                <div class="menu-mobile">
+                    <a href="">
+                        <li class="nav-button cartBtnMobile">
+                            <i class="fa-solid fa-cart-shopping">
+                                <span>0</span>
+                            </i>
+                    </li></a>
+                    <div class="toggle">
+                        <span></span>
+                        <span id="center"></span>
+                        <span></span>
+                    </div> 
+                </div>
+                <nav class="header-menu">
                     <ul class="nav-bar">
                         <a href=""><li class="nav-button">Cardápio</li></a>
                         <a href=""><li class="nav-button">Sobre nós</li></a>
                         <a href=""><li class="nav-button">Carreira</li></a>
                         <a href=""><li class="nav-button">Contato</li></a>
                         <a href=""><li class="nav-button">Social</li></a>
+                        <a href="">
+                            <li class="nav-button cartBtn">
+                                <i class="fa-solid fa-cart-shopping">
+                                    <span>0</span>
+                                </i>
+                        </li></a>
                         <a href="#foodMenu"><li class="nav-button buyButton">Peça já o seu!</li></a>
                     </ul>
                 </nav>

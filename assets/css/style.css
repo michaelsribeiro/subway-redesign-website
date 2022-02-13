@@ -94,8 +94,30 @@ header {
     display: flex;
     flex: 3;
 }
-.menu nav {
+.header-menu {
     width: 100%;
+}
+.menu-mobile {
+    width: 80px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.toggle {
+    display: block;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+}
+.toggle span{
+    width: 30px;
+    border-bottom: 3px solid #028940;
+}
+#center {
+    margin: 6px 0;
 }
 .nav-bar {
     padding: 0;
@@ -133,16 +155,30 @@ header {
 .nav-button {
     display: inline-block;
 }
-/*.menu-openner {
-    margin-right: 15px;
-    font-size: 26px;
-    background-color: #a9dcff;
-    padding: 5px 20px;
-    border-radius: 5px;
+.cartBtn {
+    font-size: 20px;
+    color: #333;
+    position: relative;
 }
-.menu-openner span {
-    margin-right:10px;
-}*/
+.cartBtn:not(hover) {
+    color: #333;
+}
+.cartBtn span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    
+    position: absolute;
+    top: -6px;
+    right: -10px;
+
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
 .menu-closer {
     width:32px;
     height:32px;
@@ -747,9 +783,73 @@ footer .logo img {
     }
 
     .menu {
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .menu-mobile {
+        display: flex;
+    }
+
+    .header-menu {
+        display: block;
+        position: absolute;
+        right: -150%;
+        top: 51.5px;  
+        height: 100vh;
+        width: 70vw;
+        background-color: #fff;
+        box-shadow:0px 15px 15px rgba(0, 0, 0, 0.3);
+        transition: all .5s ease;   
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        background-color: #fff;
+        z-index: 50 !important;  
+    }
+
+    .nav-bar a {
+        margin: 10px 0 30px;
+        font-size: 16px;
+    }
+
+    .nav-bar a:last-child {
         display: none;
     }
 
+    .nav-bar .cartBtn {
+        display: none;
+    }
+
+    .cartBtnMobile {
+        font-size: 20px;
+        color: #333;
+        position: relative;
+    }
+    .cartBtnMobile:not(hover) {
+        color: #333;
+    }
+    .cartBtnMobile span {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+        
+        position: absolute;
+        top: -6px;
+        right: -10px;
+    
+        font-size: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    .showMenuMobile {
+        right: -22px;
+    }
     .carousel { 
         height: calc(50vh - 80px);
     }
