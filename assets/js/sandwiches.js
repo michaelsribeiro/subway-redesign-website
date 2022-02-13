@@ -1,5 +1,5 @@
 const subwayJson = [
-    {id:1, name:'Carne Defumada com Cream Cheese', img:'assets/images/Carne-Defumada.png', price:[22.90, 29,90], sizes:['15cm', '30cm'], description:'Deliciosas tiras de carne defumada misturadas com cream cheese. Uma delicia de dar água da boca.'},
+    {id:1, name:'Carne Defumada com Cream Cheese', img:'assets/images/Carne-Defumada.png', price:[22.90, 29.90], sizes:['15cm', '30cm'], description:'Deliciosas tiras de carne defumada misturadas com cream cheese. Uma delicia de dar água da boca.'},
     {id:2, name:'Frango Teriyaki', img:'assets/images/FrangoTeriyaki.png', price:[21.90, 28.90], sizes:['15cm', '30cm'], description:'Experimente o Frango Teriyaki, com pedaços suculentos de peito de frango e o delicioso molho teriyaki.'},
     {id:3, name:'Steak Cheddar Cremoso', img:'assets/images/SteakCheddarCremoso.png', price:[24.90, 32.90], sizes:['15cm', '30cm'], description:'O já adorado Steak Churrasco agora com o irresistível cheddar cremoso para mandar bem de verdade.'},
     {id:4, name:'Frango Defumado com Cream Cheese', img:'assets/images/FrangoDefumadoCreamCheese.png', price:[24.90, 32.90], sizes:['15cm', '30cm'], description:'Cubos de frango defumado misturados com o delicioso cream cheese. Uma delicia de dar água da boca.'},
