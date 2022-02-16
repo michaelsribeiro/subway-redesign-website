@@ -91,71 +91,71 @@ links.forEach((item) => {
 });
 
 subwayJson.map( (item, index) => {
-    const subwayItem = document.querySelector('.models .pizza-item').cloneNode(true);
+    const subwayItem = document.querySelector('.models .product').cloneNode(true);
     subwayItem.setAttribute('data-key', index);
-    subwayItem.querySelector('.pizza-item--img img').src = item.img;
-    subwayItem.querySelector('.pizza-item--price').innerHTML = `${item.price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} (${item.sizes[0]})`;
-    subwayItem.querySelector('.pizza-item--name').innerHTML = item.name;
+    subwayItem.querySelector('.product--img img').src = item.img;
+    subwayItem.querySelector('.product--price').innerHTML = `${item.price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} (${item.sizes[0]})`;
+    subwayItem.querySelector('.product--name').innerHTML = item.name;
     subwayItem.querySelector('a').addEventListener('click', (event) => {
         event.preventDefault();
         document.querySelector('body').style.overflow = 'hidden';
-        let key = event.target.closest('.pizza-item').getAttribute('data-key');
+        let key = event.target.closest('.product').getAttribute('data-key');
         quant = 1;
         pizzaKey = key;        $('input[type=checkbox]').prop('checked',false);
-        document.querySelector('.pizzaBig img').src = subwayJson[key].img;
-        document.querySelector('.pizzaInfo h1').innerHTML = subwayJson[key].name;
-        document.querySelector('.pizzaInfo--desc').innerHTML = subwayJson[key].description;
-        document.querySelector('.pizzaInfo--actualPrice').innerHTML = `${subwayJson[key].price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
-        document.querySelector('.pizzaInfo--size.selected').classList.remove('selected');
-        document.querySelectorAll('.pizzaInfo--size').forEach((size, sizeIndex) => {
+        document.querySelector('.productImgBig img').src = subwayJson[key].img;
+        document.querySelector('.productInfo h1').innerHTML = subwayJson[key].name;
+        document.querySelector('.productInfo--desc').innerHTML = subwayJson[key].description;
+        document.querySelector('.productInfo--actualPrice').innerHTML = `${subwayJson[key].price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
+        document.querySelector('.productInfo--size.selected').classList.remove('selected');
+        document.querySelectorAll('.productInfo--size').forEach((size, sizeIndex) => {
             if (sizeIndex == 0) size.classList.add('selected');
         });
-        document.querySelector('.pizzaInfo--qt').innerHTML = quant;
-        document.querySelector('.pizzaWindowArea').style.opacity = 0;
-        document.querySelector('.pizzaWindowArea').style.display = 'flex';
+        document.querySelector('.productInfo--qt').innerHTML = quant;
+        document.querySelector('.modalArea').style.opacity = 0;
+        document.querySelector('.modalArea').style.display = 'flex';
         setTimeout(() => {            
-            document.querySelector('.pizzaWindowArea').style.opacity = 1;
+            document.querySelector('.modalArea').style.opacity = 1;
         }, 200);
     });
-    document.querySelector('.pizza-area').append( subwayItem );
+    document.querySelector('.product-area').append( subwayItem );
 });
 
 function closeModal() {
-    document.querySelector('.pizzaWindowArea').style.opacity = 0;
+    document.querySelector('.modalArea').style.opacity = 0;
     setTimeout( () => {
-        document.querySelector('.pizzaWindowArea').style.display = 'none';
+        document.querySelector('.modalArea').style.display = 'none';
     }, 200);
     document.querySelector('body').style.overflow = 'visible';
 }
 
-document.querySelectorAll('.pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton').forEach( (item) => {
+document.querySelectorAll('.productInfo--cancelButton, .productInfo--cancelMobileButton').forEach( (item) => {
     item.addEventListener('click', closeModal);
 });
 
-document.querySelector('.pizzaInfo--qtmenos').addEventListener('click', () => {
+document.querySelector('.productInfo--qtmenos').addEventListener('click', () => {
     quant > 1 ? quant -= 1 : quant;
-    document.querySelector('.pizzaInfo--qt').innerHTML = quant;
+    document.querySelector('.productInfo--qt').innerHTML = quant;
 });
 
-document.querySelector('.pizzaInfo--qtmais').addEventListener('click', () => {
+document.querySelector('.productInfo--qtmais').addEventListener('click', () => {
     quant++;
-    document.querySelector('.pizzaInfo--qt').innerHTML = quant;
+    document.querySelector('.productInfo--qt').innerHTML = quant;
 });
 
-document.querySelectorAll('.pizzaInfo--size').forEach( (size, sizeIndex) => {
+document.querySelectorAll('.productInfo--size').forEach( (size, sizeIndex) => {
     size.addEventListener('click', () => {
-        document.querySelector('.pizzaInfo--size.selected').classList.remove('selected');
+        document.querySelector('.productInfo--size.selected').classList.remove('selected');
         size.classList.add('selected');        
         if (sizeIndex === 0){
-            document.querySelector('.pizzaInfo--actualPrice').innerHTML = `${subwayJson[pizzaKey].price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
+            document.querySelector('.productInfo--actualPrice').innerHTML = `${subwayJson[pizzaKey].price[0].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
         } else {                      
-            document.querySelector('.pizzaInfo--actualPrice').innerHTML = `${subwayJson[pizzaKey].price[1].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
+            document.querySelector('.productInfo--actualPrice').innerHTML = `${subwayJson[pizzaKey].price[1].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`;
         }
     });
 });
 
-document.querySelector('.pizzaInfo--addButton').addEventListener('click', () => {
-    let size = parseInt(document.querySelector('.pizzaInfo--size.selected').getAttribute('data-key'));
+document.querySelector('.productInfo--addButton').addEventListener('click', () => {
+    let size = parseInt(document.querySelector('.productInfo--size.selected').getAttribute('data-key'));
     let identifier = subwayJson[pizzaKey].id + '-' + size;
     let key = cart.findIndex( (item) => item.identifier == identifier);
     if ( key > -1 ) {

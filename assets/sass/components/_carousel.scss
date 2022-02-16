@@ -1,0 +1,389 @@
+@import "../core/reset";
+@import "../abstract/breakpoint";
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+.carousel { 
+    flex: 1; 
+    overflow: hidden;
+    top: 80px;
+    height: calc(100vh - 80px);
+    z-index: 1;
+    
+    @include breakpoint(large-up) {  
+        height: 100vh;
+    }
+
+    .carousel-dots {
+        position: absolute;
+        width: 100vw;
+        @include flexCenter(row, space-between, center);
+
+        .dots {
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    }
+
+    .carousel-inner {
+        height: 100%;
+        display: flex;
+        transition: all ease .8s;
+
+        .carousel-item {
+            width: 100vw;
+            height: inherit;
+            @include flexCenter(column, center, center);
+
+            .mask {
+                position: absolute;
+                width: 100vw;
+                height: 90vh;
+                background-color: rgba(0,0,0,.7);
+
+                @include breakpoint(medium-to-large) {  
+                    height: 90vh;
+                }
+
+                @include breakpoint(large-up) {  
+                    height: 100vh;
+                }
+            }
+
+            &.first {
+                background-image: url('../images/complementos/bg-02.png');
+                background-size: cover;
+                background-position: center;
+            }
+
+            &.second {
+                background-image: url('../images/complementos/bg-01.jpg');
+                background-size: cover;
+                background-position: bottom;
+            }
+            
+            .carousel-area {
+                margin-top: 40px;                
+                @include flexCenter(column, center, center);
+
+                h1 {
+                    text-align: center;
+                    font-weight: 800;
+                    font-size: 30px;
+                    color: $text-white;
+                    z-index: z-index(overlay);
+
+                    @include breakpoint(medium-to-large) {   
+                        font-size: 50px;
+                    }
+
+                    @include breakpoint(large-up) {   
+                        font-size: 50px;
+                    }
+
+                    span {
+                        color: $text-color-secondary;
+                    }
+                }
+
+                h2 {
+                    z-index: z-index(overlay);
+                    @include breakpoint(medium-to-large) {   
+                        font-size: 22px;
+                    }
+                    
+                    @include breakpoint(large-up) {   
+                        font-size: 22px;
+                    }
+                }
+
+                button {
+                    margin-top: 20px;
+                    z-index: z-index(overlay);
+                }
+            }
+        }
+    }
+}
+
+.owl-one {
+    margin-top: 20px;
+    @include flexCenter(row, center, center);
+
+    .item {
+        @include flexCenter(row, center, center);
+        
+        @include breakpoint(medium-to-large) {            
+            margin-right: 30px;
+        }
+
+        @include breakpoint(large-up) {
+            margin-right: 30px;
+        }
+
+        .card { 
+            width: 300px;
+            margin: 50px 0 20px 0;
+            background-color: #fff;
+            transition: .3s linear;
+            border-radius: 10px;
+            @include flexCenter(column, center, center);            
+
+            @include breakpoint(medium-to-large) {
+                width: 200px;
+                margin: 20px 0;
+            }
+
+            @include breakpoint(large-up) {
+                width: 200px !important;
+                margin: 20px 0;
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px rgba(102, 102, 102, .4);
+            }
+
+            .card-image {        
+                width: 60%;
+                margin: 30px 0;
+
+                @include breakpoint(medium-to-large) {
+                    width: 50%;
+                    margin: 20px 0;
+                }
+
+                @include breakpoint(large-up) {
+                    width: 50%;
+                    margin: 20px 0;
+                }
+    
+            }
+
+            .card-info {
+
+                h1 {
+                    color: $text-color-primary;
+                    margin-bottom: 10px;
+                    text-align: center;
+
+                    @include breakpoint(medium-to-large) {
+                        font-size: 13px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        font-size: 13px;
+                    }
+        
+                }
+
+                p {
+                    text-align: center;
+                    
+                    @include breakpoint(medium-to-large) {
+                        font-size: 10px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .card-links {
+                width: 100%;
+                padding: 30px 0;
+                @include flexCenter(row, center, center);
+
+                @include breakpoint(medium-to-large) {
+                    padding: 20px 0;
+                }
+
+                @include breakpoint(large-up) {
+                    padding: 20px 0;
+                }
+
+                .fab {
+                    padding: 8px 10px;
+                    font-size: 20px;
+                    border-radius: 50%;
+                    background-color: $text-color-secondary;
+                    color: $text-white;
+                    transition: all ease .3s;
+                    cursor: pointer;
+
+                    @include breakpoint(medium-to-large) {
+                        padding: 5px 7px;
+                        font-size: 15px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        padding: 5px 7px;
+                        font-size: 15px;
+                    }
+
+                    &:nth-child(2) {
+                        margin: 0 20px;
+
+                        @include breakpoint(medium-to-large) {
+                            margin: 0 10px;
+                        }
+
+                        @include breakpoint(large-up) {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: darken($text-color-secondary, 10);
+                    }
+                }                
+            }
+        }
+    }
+}
+
+.owl-two {
+    margin-top: 20px;
+    @include flexCenter(row, center, center);
+
+    .item {
+        @include flexCenter(row, center, center);
+
+        .card { 
+            width: 100%;
+            margin: 10px 0 20px 0;
+            transition: .3s linear;
+            border-radius: 10px;
+            @include flexCenter(column, center, center);            
+
+            @include breakpoint(medium-to-large) {
+                width: 600px;
+                margin: 20px 0;
+            }
+
+            @include breakpoint(large-up) {
+                width: 600px !important;
+                margin: 20px 0;
+            }
+
+            .card-image {
+                max-width: 250px;        
+                width: 35%;
+                margin: 20px 0;
+
+                @include breakpoint(medium-to-large) {
+                    width: 20%;
+                    margin: 20px 0;
+                }
+
+                @include breakpoint(large-up) {
+                    width: 20%;
+                    margin: 20px 0;
+                }
+    
+            }
+
+            .card-info {
+                @include flexCenter(column, center, center);
+
+                h1 {
+                    text-transform: none;
+                    font-size: 23px;
+                    font-weight: 600;
+                    color: $text-color-primary;
+                    margin-bottom: 10px;
+
+                    @include breakpoint(medium-to-large) {
+                        font-size: 23px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        font-size: 18px;
+                    }        
+                }
+
+                h2 {                    
+                    text-transform: none;
+                    font-size: 18px;
+                    text-align: center;
+                    color: $text-color-primary;
+                }
+
+                p {
+                    color: #7d7d7d;
+                    text-align: center;
+                    
+                    @include breakpoint(medium-to-large) {
+                        font-size: 12px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        font-size: 12px;
+                    }
+                }
+
+                i {
+                    font-size: 25px;
+                    margin: 30px 0 5px;
+                    color: #7d7d7d;
+                    opacity: .5;
+                }
+            }
+
+            .card-links {
+                width: 100%;
+                padding: 30px 0;
+                @include flexCenter(row, center, center);
+
+                @include breakpoint(medium-to-large) {
+                    padding: 20px 0;
+                }
+
+                @include breakpoint(large-up) {
+                    padding: 20px 0;
+                }
+
+                .fab {
+                    padding: 8px 10px;
+                    font-size: 20px;
+                    border-radius: 50%;
+                    background-color: $text-color-secondary;
+                    color: $text-white;
+                    transition: all ease .3s;
+                    cursor: pointer;
+
+                    @include breakpoint(medium-to-large) {
+                        padding: 5px 7px;
+                        font-size: 15px;
+                    }
+
+                    @include breakpoint(large-up) {
+                        padding: 5px 7px;
+                        font-size: 15px;
+                    }
+
+                    &:nth-child(2) {
+                        margin: 0 20px;
+
+                        @include breakpoint(medium-to-large) {
+                            margin: 0 10px;
+                        }
+
+                        @include breakpoint(large-up) {
+                            margin: 0 10px;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: darken($text-color-secondary, 10);
+                    }
+                }                
+            }
+        }
+    }
+}

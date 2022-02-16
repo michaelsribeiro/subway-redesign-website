@@ -67,7 +67,7 @@
     </main>
     <section class="foodMenu" id="foodMenu">
         <h2>Clique no seu Sub favorito <br/>e peça já!</h2>
-        <div data-aos="fade-up" data-aos-duration="1500" class="pizza-area"></div>
+        <div data-aos="fade-up" data-aos-duration="1500" class="product-area"></div>
     </section>
     <section class="banner-section">
         <div class="mask">            
@@ -78,7 +78,6 @@
     </section>
     <div class="cartsection">
         <div class="cart--area">
-            <div class="menu-closer">❌</div>
             <h1>Seu carrinho</h1>
             <div class="cart"></div>
             <div class="cart--details">
@@ -110,7 +109,7 @@
                 <img src="assets/images/logo.png" alt="Subway Logo">
             </div>
             <nav class="footer-menu">
-                <div  data-aos="fade-right" data-aos-duration="1500" class="firstMenu">
+                <div data-aos="fade-right" data-aos-duration="1500" class="firstMenu">
                     <h2>Conheça-nos</h2>
                     <ul class="footer-items">                    
                         <a href=""><li class="footer-button">Cardápio</li></a>
@@ -120,7 +119,7 @@
                         <a href=""><li class="footer-button">Social</li></a>
                     </ul>
                 </div>
-                <div  data-aos="fade-left" data-aos-duration="1500" class="secondMenu">
+                <div data-aos="fade-left" data-aos-duration="1500" class="secondMenu">
                     <h2>Seja dono de uma franquia</h2>
                     <ul class="footer-items">                    
                         <a href=""><li class="footer-button">Candidatar-se a proprietário</li></a>
@@ -130,7 +129,7 @@
                         <a href=""><li class="footer-button">Perguntas frequentes</li></a>
                     </ul>
                 </div>
-                <div  data-aos="fade-right" data-aos-duration="1500" class="socialMidias">
+                <div data-aos="fade-right" data-aos-duration="1500" class="socialMidias">
                     <h2>Redes Sociais</h2>
                     <ul class="footer-items">                    
                         <a href=""><li class="footer-button"><i class="fab fa-facebook"></i></li></a>
@@ -146,13 +145,13 @@
         </div>
     </footer>
     <div class="models">
-        <div class="pizza-item">
+        <div class="product">
             <a href="">
-                <div class="pizza-item--img"><img src="" /></div>
-                <div class="pizza-item--add">+</div>
+                <div class="product--img"><img src="" /></div>
+                <div class="product--add">+</div>
             </a>
-            <div class="pizza-item--price">R$ --</div>
-            <div class="pizza-item--name">--</div>
+            <div class="product--price">R$ --</div>
+            <div class="product--name">--</div>
         </div>
         <div class="cart--item">
             <img src="" />
@@ -165,27 +164,27 @@
             <div class="cart--item-price"></div>
         </div>
     </div>    
-    <div class="pizzaWindowArea">
-        <div class="pizzaWindowBody">
-            <div class="pizzaInfo--cancelMobileButton">Voltar</div>
-            <div class="pizzaBig">
+    <div class="modalArea">
+        <div class="productBody">
+            <div class="productInfo--cancelMobileButton">Voltar</div>
+            <div class="productImgBig">
                 <img src="" />
             </div>
-            <div class="pizzaInfo">
+            <div class="productInfo">
                 <div class="headerModal">                    
                     <h1>--</h1>
-                    <div class="pizzaInfo--desc">--</div>
+                    <div class="productInfo--desc">--</div>
                 </div>
                 <div class="wrapper">
-                    <div class="pizzaInfo--sizearea">
-                        <div class="pizzaInfo--sector">Tamanho</div>
-                        <div class="pizzaInfo--sizes">
-                            <div data-key="0" class="pizzaInfo--size">15 centímetros</div>
-                            <div data-key="1" class="pizzaInfo--size selected">30 centímetros</div>
+                    <div class="productInfo--sizearea">
+                        <div class="productInfo--sector">Tamanho</div>
+                        <div class="productInfo--sizes">
+                            <div data-key="0" class="productInfo--size">15 centímetros</div>
+                            <div data-key="1" class="productInfo--size selected">30 centímetros</div>
                         </div>
                     </div>
-                    <div class="pizzaInfo--breadarea">
-                        <div class="pizzaInfo--sector">Escolha seu pão</div>
+                    <div class="productInfo--breadarea">
+                        <div class="productInfo--sector">Escolha seu pão</div>
                         <select name="bread" id="bread" class="required">
                             <option value="" disabled="disabled"></option>
                             <option value="9 grãos">9 Grãos</option>
@@ -195,74 +194,74 @@
                             <option value="Italiano Branco">Três Queijos</option>
                         </select>
                     </div>
-                    <div class="pizzaInfo--saladarea">
-                        <div class="pizzaInfo--sector">Acompanhamentos</div>
-                        <div class="pizzaInfo--saladitem">
-                            <div class="pizzaInfo--row">
-                                <div class="pizzaInfo--rowItem">
+                    <div class="productInfo--saladarea">
+                        <div class="productInfo--sector">Acompanhamentos</div>
+                        <div class="productInfo--saladitem">
+                            <div class="productInfo--row">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Alface">Alface
                                 </div>
-                                <div class="pizzaInfo--rowItem">                                
+                                <div class="productInfo--rowItem">                                
                                 <input type="checkbox" name="Tomate" id="">Tomate
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Aceitona Preta" id="">Azeitona Preta
                                 </div>
                             </div>
-                            <div class="pizzaInfo--row">
-                                <div class="pizzaInfo--rowItem">
+                            <div class="productInfo--row">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Cebola Roxa" id="">Cebola Roxa
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Picles" id="">Picles
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Picles" id="">Pimentão
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="pizzaInfo--saucearea">
-                        <div class="pizzaInfo--sector">Escolha seu molho</div>
-                        <div class="pizzaInfo--sauceitem">
-                            <div class="pizzaInfo--row">
-                                <div class="pizzaInfo--rowItem">
+                    <div class="productInfo--saucearea">
+                        <div class="productInfo--sector">Escolha seu molho</div>
+                        <div class="productInfo--sauceitem">
+                            <div class="productInfo--row">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Maionese" id="">Maionese
                                 </div>
-                                <div class="pizzaInfo--rowItem">                                
+                                <div class="productInfo--rowItem">                                
                                 <input type="checkbox" name="BBQ" id="">Barbecue
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Mostarda" id="">Mostarda
                                 </div>
                             </div>
-                            <div class="pizzaInfo--row">
-                                <div class="pizzaInfo--rowItem">
+                            <div class="productInfo--row">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Mostarda e Mel" id="">Mostarda e Mel
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Cebola Agridoce" id="">Cebola Agridoce
                                 </div>
-                                <div class="pizzaInfo--rowItem">
+                                <div class="productInfo--rowItem">
                                     <input type="checkbox" name="Parmesãao" id="">Parmesão
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="pizzaInfo--pricearea">
-                        <div class="pizzaInfo--sector">Preço</div>
-                        <div class="pizzaInfo--price">
-                            <div class="pizzaInfo--actualPrice">R$ --</div>
-                            <div class="pizzaInfo--qtarea">
-                                <button class="pizzaInfo--qtmenos">-</button>
-                                <div class="pizzaInfo--qt">1</div>
-                                <button class="pizzaInfo--qtmais">+</button>
+                    <div class="productInfo--pricearea">
+                        <div class="productInfo--sector">Preço</div>
+                        <div class="productInfo--price">
+                            <div class="productInfo--actualPrice">R$ --</div>
+                            <div class="productInfo--qtarea">
+                                <button class="productInfo--qtmenos">-</button>
+                                <div class="productInfo--qt">1</div>
+                                <button class="productInfo--qtmais">+</button>
                             </div>
                         </div>
                     </div>
                 </div>                
-                <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
-                <div class="pizzaInfo--cancelButton">Cancelar</div>
+                <div class="productInfo--addButton">Adicionar ao carrinho</div>
+                <div class="productInfo--cancelButton">Cancelar</div>
             </div>
         </div>
     </div>  

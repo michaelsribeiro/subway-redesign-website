@@ -1,0 +1,45 @@
+@import "../abstract/variables";
+
+h1 {
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 10px !important;
+
+    @include breakpoint(large-up) {
+        font-size: 25px;
+    }
+}
+
+h2 {    
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-white;    
+}
+
+h3 {    
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-color-terciary;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+    color: $text-white;
+}
+
+p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #242424;
+
+    @include breakpoint(large-up) {        
+        text-align: initial;
+        font-size: 12px;
+    }
+}

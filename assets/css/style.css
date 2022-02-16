@@ -54,13 +54,9 @@ body {
     overflow-x: hidden;
     background-color:#fff;    
     font-family: Subway, Helvetica, Arial;
-    font-size:15px;
+    font-size:12px;
     margin:0;
     position: relative;
-}
-body.modal-open {
-    overflow: hidden;
-    position: fixed;
 }
 .models {
     display:none;
@@ -284,30 +280,30 @@ header {
     font-size: 40px;
     background-color: #028940;
 }
-.pizza-area {
+.product-area {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.pizza-item {
+.product {
     text-align: center;
     max-width:250px;
     margin:0 auto 50px auto;
 }
-.pizza-item a {
+.product a {
     display:flex;
     flex-direction: column;
     align-items:center;
     text-decoration: none;
 }
-.pizza-item--img {
+.product--img {
     width:320px;
     height:180px;
     overflow: hidden;
 }
-.pizza-item--img img {
+.product--img img {
     width:100%;
 }
-.pizza-item--add {
+.product--add {
     width:50px;
     height:50px;
     line-height:50px;
@@ -320,27 +316,27 @@ header {
     margin-top:-25px;
     transition:all ease .2s;
 }
-.pizza-item a:hover .pizza-item--add {
+.product a:hover .product--add {
     background-color:#cfa707;
 }
-.pizza-item--price {
+.product--price {
     font-size:15px;
     font-weight: 600;
     color:#333;
     margin-top:5px;
 }
-.pizza-item--name {
+.product--name {
     font-size:18px;
     font-weight: bold;
     color:#028940;
     margin-top:5px;
 }
-.pizza-item--desc {
+.product--desc {
     font-size:13px;
     color:#555;
     margin-top:10px;
 }
-.pizzaWindowArea {
+.modalArea {
     position:fixed;
     left:0;
     top:0;
@@ -354,7 +350,7 @@ header {
     overflow-y:auto;
     z-index: 500;
 }
-.pizzaWindowBody {
+.productBody {
     width:900px;
     height: 500px;
     background-color:#FFF;
@@ -363,50 +359,50 @@ header {
     display:flex;
     margin:20px 0px;
 }
-.pizzaBig {
+.productImgBig {
     flex:1;
     display:flex;
     justify-content: center;
     align-items: center;
 }
-.pizzaBig--back {
+.productImgBig--back {
     position:absolute;
     width:30px;
     height:30px;
     background-color:#000;
 }
-.pizzaBig img {
+.productImgBig img {
     height:280px;
     width:auto;
 }
-.pizzaInfo {
+.productInfo {
     flex:1;
     font-family: Subway, Helvetica, Arial;
     padding-bottom:30px;
     overflow-y: auto;
     margin-right: 8px;
 }
-.pizzaInfo h1 {
+.productInfo h1 {
     margin-top:30px;
 }
-.pizzaInfo .pizzaInfo--desc {
+.productInfo .productInfo--desc {
     font-size:15px;
     color:#999;
     margin-top:10px;
     font-family: Subway,Helvetica,Arial;
 }
-.pizzaInfo .wrapper{
+.productInfo .wrapper{
     overflow-x: hidden;
     overflow-y: auto;
 }
-.pizzaInfo--sector {
+.productInfo--sector {
     color:#CCC;
     text-transform: uppercase;
     font-size:14px;
     margin-top:15px;
     margin-bottom:10px;
 }
-.pizzaInfo--breadarea {
+.productInfo--breadarea {
     width: 90%;
 }
 #bread {
@@ -414,31 +410,31 @@ header {
     padding: 5px;
     outline: none;
 }
-.pizzaInfo--saladarea {
+.productInfo--saladarea {
     width: 90%;
 }
-.pizzaInfo--saladitem {
+.productInfo--saladitem {
     display: flex;
     flex-direction: column;
 }
-.pizzaInfo--row {
+.productInfo--row {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.pizzaInfo--rowItem {
+.productInfo--rowItem {
     font-size: 13px;
     margin-top: 5px;
 }
-.pizzaInfo--saucearea {
+.productInfo--saucearea {
     width: 90%;
 }
-.pizzaInfo--sizes {
+.productInfo--sizes {
     display:inline-flex;
     border-radius:10px;
     overflow:hidden;
 }
-.pizzaInfo--size {
+.productInfo--size {
     padding:10px 15px;
     color:#000;
     background-color:#EEE;
@@ -446,36 +442,36 @@ header {
     font-weight: bold;
     cursor:pointer;
 }
-.pizzaInfo--size:hover {
+.productInfo--size:hover {
     background-color:#CCC;
 }
-.pizzaInfo--size.selected {
+.productInfo--size.selected {
     background-color:#48d05f;
     color:#FFF;
 }
-.pizzaInfo--size.selected span {
+.productInfo--size.selected span {
     color:#D6D6D6;
 }
-.pizzaInfo--size span {
+.productInfo--size span {
     font-size:12px;
     color:#999;
     font-weight: normal;
 }
-.pizzaInfo--price {
+.productInfo--price {
     display:flex;
     align-items:center;
 }
-.pizzaInfo--actualPrice {
+.productInfo--actualPrice {
     font-size:28px;
     margin-right:30px;
 }
-.pizzaInfo--qtarea {
+.productInfo--qtarea {
     display:inline-flex;
     background-color:#EEE;
     border-radius:10px;
     height:30px;
 }
-.pizzaInfo--qtarea button {
+.productInfo--qtarea button {
     border:0;
     background-color:transparent;
     font-size:17px;
@@ -484,14 +480,14 @@ header {
     padding:0px 10px;
     color:#333;
 }
-.pizzaInfo--qt {
+.productInfo--qt {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
     padding: 0px 5px;
     color:#000;
 }
-.pizzaInfo--addButton {
+.productInfo--addButton {
     margin-top:30px;
     padding:20px 30px;
     border-radius:20px;
@@ -501,14 +497,14 @@ header {
     cursor:pointer;
     margin-right:30px;
 }
-.pizzaInfo--addButton:hover {
+.productInfo--addButton:hover {
     background-color:#32a345;
 }
-.pizzaInfo--cancelButton {
+.productInfo--cancelButton {
     display:inline-block;
     cursor:pointer;
 }
-.pizzaInfo--cancelMobileButton {
+.productInfo--cancelMobileButton {
     display:none;
     height:40px;
     text-align:center;
@@ -763,7 +759,7 @@ footer .logo img {
 }
 
 @media (max-width:1000px) {
-    .pizza-area {
+    .product-area {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -772,10 +768,10 @@ footer .logo img {
     body {
         flex-direction: column;
     }
-    .pizza-area {
+    .product-area {
         display:block;
     }
-    .pizza-item {
+    .product {
         max-width:100%;
     }
     header {
@@ -880,12 +876,12 @@ footer .logo img {
     .cart--area {
         width:100vw;
     }
-    .pizzaWindowArea {
+    .modalArea {
         justify-content:flex-start;
         align-items: flex-start;
     }
 
-    .pizzaWindowBody {
+    .productBody {
         width:100vw;
         height: auto;
         display:block;
@@ -895,7 +891,7 @@ footer .logo img {
         margin:0;
     }
 
-    .pizzaBig img {
+    .productImgBig img {
         width: 100%;
         height: auto;
     }

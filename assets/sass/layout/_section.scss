@@ -1,0 +1,894 @@
+@import "../core/reset";
+@import "../abstract/breakpoint";
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+section {
+    width: 100%;
+    
+    &.light {        
+        background-color: $bg-color-secondary;
+
+        h1 {
+            color: $text-color-primary;
+        }
+
+        p {
+            color: $text-color-primary;
+        }
+    }
+
+    &.dark {
+        background-color: $bg-color-primary;
+
+        h1 {
+            color: $text-white;
+        }
+
+        p {
+            color: $text-white;
+        }
+    }
+
+    .container {
+        padding: 60px 0;
+        @include flexCenter(column, center, center);        
+    }
+
+    .content {
+        margin-top: 30px;
+        @include flexCenter(column, center, center);
+
+        @include breakpoint(medium-to-large) {             
+            margin-top: 50px;
+            @include flexCenter(row, center, center);
+        }
+
+        @include breakpoint(large-up) {             
+            margin-top: 50px;
+            @include flexCenter(row, center, center);
+        }
+    }
+}
+
+.about {     
+
+    .about-text {
+        flex: 1;
+        margin-bottom: 20px;
+        @include flexCenter(column, center, center);
+
+        @include breakpoint(medium-to-large) {            
+            margin-bottom: 0;                
+            margin-right: 40px;
+        }
+
+        @include breakpoint(large-up) {
+            margin-bottom: 0;                 
+            margin-right: 40px;
+        }
+
+        p {
+            color: #7d7d7d;
+        }
+
+        button {
+            margin: 20px 0 0;
+        }
+    }
+
+    // Resposively youtube video
+    .about-video {
+        flex: 1;
+        width: 100%;
+        max-width: 800px;
+        margin: 40px auto 0;
+
+        @include breakpoint(medium-to-large) {    
+            margin: auto;
+        }
+        
+        @include breakpoint(large-up) {    
+            margin: auto;
+        }
+    
+        .video-area {
+            position: relative;
+            height: 0px;
+            padding: 0px 0px 42.5%;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0px;
+                box-shadow: 3px 5px 10px rgba(43, 42, 42, .5);
+            }
+        }
+    }   
+}
+
+.services {
+    .services-box {
+        max-width: 300px;
+        padding: 20px 30px;
+        @include flexCenter(column, center, center);
+
+        @include breakpoint(medium-to-large) {    
+            padding: 20px 0;
+            margin: 0 10px;
+            justify-content: space-between;
+        }
+
+        @include breakpoint(large-up){
+            padding: 20px 0;
+            margin: 0 10px;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+            color: $text-color-terciary;
+        }
+    }
+}
+
+.projects {
+
+    .content {
+        @include flexCenter(column, center, center);
+
+        @include breakpoint(large-up) {            
+            height: 70vh;
+        }
+    }
+
+    .projects-filter {
+        display: inline-block;
+        background-color: #eee;
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        margin: 30px 0 10px;
+        padding: 0 15px;
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0;
+            padding: 12px 18px;
+            text-transform: uppercase;
+            font-size: 11px;
+            border-right: 1px solid #ccc;
+            border-bottom: 2px solid #eee;
+            color: #555;
+            cursor: pointer;
+            transition: all ease .3s;
+            
+            &.active {
+                border-bottom: 2px solid $text-color-secondary;
+            }
+
+            &:last-child{ 
+                border-right: none;
+            }
+
+            &:hover {
+                border-bottom: 2px solid $text-color-secondary;
+            }
+        }
+    }
+
+    .projects-thumb {
+        width: 100%;
+        max-width: 1140px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .projects-photo {
+            width: 260px;
+
+            .projects-photoarea {
+                margin: 10px;
+                width: 240px;
+                height: 140px;
+                position: relative;
+                cursor: pointer;
+
+                .project-info {
+                    opacity: 0;
+                    position: absolute;
+                    width: inherit;
+                    height: inherit;
+                    padding: 0 20px;
+                    background-color: rgba(0, 0, 0, .8);
+                    transition: all ease .3s;
+                    z-index: z-index(dropdown);
+                    @include flexCenter(column, center, center);
+
+                    h4 {
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        color: $text-white;
+                        font-size: 10px;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                img {
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+    }
+    
+    .btn-default {
+        margin-top: 30px;
+    }
+}
+    
+.team {
+    background-image: url('../images/complementos/bg-03.jpg');
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+
+    h1 {
+        color: $text-white;
+    }
+}
+
+.awards {
+    width: 100%;
+
+    .container {
+        padding: 30px 0;
+
+        .content {
+            width: 100%;
+            margin: 0;
+            @include flexCenter(row, space-around, center);
+
+            @include breakpoint(zero-to-small) { 
+                @include flexCenter(row, center, center);
+
+                #image1 {
+                    margin-right: 50px;
+                }
+                #image2 {
+                    display: none;
+                }          
+                #image3 {
+                    display: none;
+                }
+                #image4 {
+                    display: none;
+                }
+                #image5 {
+                    display: none;
+                } 
+            }
+
+            @include breakpoint(small-to-medium) {            
+                #image3 {
+                    display: none;
+                }
+                #image4 {
+                    display: none;
+                }
+                #image5 {
+                    display: none;
+                }                
+            }
+
+            img {
+                width: 75px;
+            }
+        }
+    }
+}
+
+.price {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        @include flexCenter(column, center, center);
+
+        @include breakpoint(medium-to-large) { 
+            @include flexCenter(row, space-around, center);
+        }
+
+        @include breakpoint(large-up) { 
+            @include flexCenter(row, space-around, center);
+        }
+
+        .card {
+            width: 300px;
+            height: 450px;
+            margin: 20px 0;
+            background-color: #fff;
+            transition: all .3s linear;
+            border-radius: 10px;
+            text-align: center;
+            @include flexCenter(column, flex-start, center);
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 5px 10px rgba(43, 42, 42, .1);
+            }
+
+            @include breakpoint(medium-to-large) { 
+                width: 280px;
+                height: 350px;
+            }
+
+            @include breakpoint(large-up) { 
+                width: 280px;
+                height: 350px;
+            }
+
+            p {
+                margin-top: 10px;
+                color: #7d7d7d;
+
+                @include breakpoint(medium-to-large) { 
+                    margin-top: 5px;
+                }
+
+                @include breakpoint(large-up) { 
+                    margin-top: 5px;
+                }
+            }
+
+            .card-title {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+
+            .price {
+                color: #7d7d7d;
+                margin: 30px 0;
+                text-align: center;
+                font-size: 25px;
+
+                @include breakpoint(medium-to-large) { 
+                    margin: 10px 0;
+                    font-size: 20px;
+                }
+
+                @include breakpoint(large-up) { 
+                    margin: 10px 0;
+                    font-size: 20px;
+                }
+
+                & span {
+                    color: #000;
+                    font-size: 45px;
+                    font-weight: bold;
+
+                    @include breakpoint(medium-to-large) { 
+                        font-size: 40px;
+                    }
+
+                    @include breakpoint(large-up) { 
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            .list-item {
+                @include breakpoint(medium-to-large) { 
+                    font-size: 13px;
+                }
+
+                i {
+                    color: #41ca90;
+                }
+            }
+
+            button {
+                margin-top: 30px;
+
+                @include breakpoint(medium-to-large) { 
+                    margin-top: 20px;
+                }
+
+                @include breakpoint(large-up) { 
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+.packages {
+    width: 100%;
+
+    .container {
+        padding-bottom: 30px;
+
+        .content {
+            width: 100%;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            @include flexCenter(column, center, center);
+
+            @include breakpoint(small-to-medium) { 
+                @include flexCenter(row, center, center);
+            }
+
+            @include breakpoint(medium-to-large) {
+                width: 90%; 
+                @include flexCenter(row, center, center);
+            }
+
+            @include breakpoint(large-up) { 
+                width: 80%;
+                @include flexCenter(row, center, center);
+            }
+    
+            .package-photo {
+                width: 100%;
+                margin: 20px 0 50px;
+                @include flexCenter(row, center, center);
+
+                @include breakpoint(small-to-medium) { 
+                    margin-right: 30px;
+                }
+
+                @include breakpoint(medium-to-large) {                    
+                    max-width: 400px;
+                    width: 100%;
+                    margin-right: 30px;
+                }
+
+                @include breakpoint(large-up) {                    
+                    max-width: 400px;
+                    width: 100%;
+                    margin-right: 30px;
+                }
+    
+                img {
+                    width: 80%;
+
+                    @include breakpoint(small-to-medium) { 
+                        width: 100%;
+                    }    
+    
+                    @include breakpoint(medium-to-large) {                    
+                        width: 100%;
+                    }
+    
+                    @include breakpoint(large-up) {                    
+                        width: 100%;
+                    }
+                }
+            }
+    
+            .package-info {
+                .feature {
+    
+                    &:nth-child(2) {
+                        margin: 30px 0;
+                    }
+    
+                    h1 {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+    
+                    p {
+                        margin-left: 40px;
+                        color: #7d7d7d;
+                    }
+
+                    .far {
+                        color: $text-color-secondary;
+                    }
+                }
+            }
+        }
+    
+        button {
+            margin-top: 30px;
+        }
+    }   
+}
+
+.facts {
+
+    .content {
+        width: 100% !important;
+
+        .facts-box {
+            max-width: 300px;
+            width: 100%;
+            padding: 20px 30px;
+            text-align: center;
+            @include flexCenter(column, center, center);
+    
+            @include breakpoint(medium-to-large) {    
+                padding: 20px 0;
+                margin: 0 10px;
+                justify-content: space-around;
+            }
+    
+            @include breakpoint(large-up){
+                padding: 20px 0;
+                margin: 0 10px;
+                justify-content: space-around;
+            }
+    
+            .counter {
+                color: $text-color-secondary;
+                font-weight: 700;
+                font-size: 40px;
+                margin-bottom: 20px;
+                padding: 10px 0;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 25px;
+                    height: 3px;
+                    left: 50%;
+                    transform: translate(-50%);
+                    bottom: 0;
+                    background: #7d7d7d;
+                    border-radius: 5px;
+                }
+            }
+    
+            img {
+                margin-bottom: 20px;
+            }
+    
+            h4 {
+                font-weight: 600;
+            }
+    
+            p {
+                text-align: center;
+                margin-top: 10px;
+                color: $text-color-terciary;
+            }
+        }
+    }    
+}
+
+.social {
+    width: 100%;
+
+    .container {
+        padding: 0;
+
+        .content {
+            width: 100%;
+            margin: 0;
+            padding: 20px 0;
+            @include flexCenter(column, center, center);
+
+            @include breakpoint(medium-to-large) {    
+                max-width: 600px;   
+                @include flexCenter(row, center, center);
+            }
+
+            @include breakpoint(large-up) { 
+                max-width: 600px;   
+                @include flexCenter(row, center, center);
+            }
+
+            .social-text {
+                width: 100%;
+                @include flexCenter(row, center, center);
+
+                i {
+                    color: $text-color-terciary;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+
+                    @include breakpoint(medium-to-large) {    
+                        margin: 0;
+                        font-size: 25px;
+                    }
+        
+                    @include breakpoint(large-up) {    
+                        margin: 0;
+                    }
+                }
+
+                h4 {
+                    color: $text-color-terciary;
+                    padding-left: 10px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+
+                    @include breakpoint(medium-to-large) {    
+                        margin: 0;
+                    }
+        
+                    @include breakpoint(large-up) {    
+                        margin: 0;
+                    }
+                }
+            }
+
+            .social-icons {
+                width: 100%;
+                @include flexCenter(row, center, center);
+
+                i {
+                    font-size: 20px;
+                    padding: 8px;
+                    margin: 0 20px;
+                    border-radius: 50%;
+                    color: $text-white;
+                    cursor: pointer;
+
+                    animation-name: infiniteupdown;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease;
+                    transition: all .3s;
+
+
+                    &.fa-twitter {
+                        background: #33c5ef;
+                    }
+
+                    &.fa-linkedin-in {
+                        background: #127cb5;
+                        padding: 8px 9px;
+                    }
+
+                    &.fa-facebook-f {
+                        background: #336296;
+                        padding: 8px 12px;
+                    }
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    .container {
+
+        h3 {
+            text-align: center;
+        }
+        .content {
+            width: 100%;
+            @include flexCenter(column, center, center);
+
+            @include breakpoint(small-to-medium) {    
+                width: 500px;
+            }
+
+            @include breakpoint(medium-to-large) {    
+                width: 500px;
+            }
+
+            @include breakpoint(large-up) {    
+                width: 500px;
+            }
+
+            form {
+                width: 100%;
+
+                input, select, textarea{
+                    color: #b2b2b2;
+                }
+
+                .row {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    @include flexCenter(column, flex-start, center);
+
+                    @include breakpoint(small-to-medium) {    
+                        @include flexCenter(row, flex-start, center);
+                    }
+
+                    @include breakpoint(medium-to-large) {    
+                        @include flexCenter(row, flex-start, center);
+                    }
+
+                    @include breakpoint(large-up) {    
+                        @include flexCenter(row, flex-start, center);
+                    }
+
+                    input {
+                        margin-bottom: 20px;
+                        padding: 10px 0;
+                        background: transparent;
+                        border: none;
+                        border-bottom: 2px solid #b2b2b2;
+                        outline: none;
+                        transition: all ease .3s;
+
+                        &::placeholder {
+                            font-weight: 500;
+                            font-size: 11px;
+                            color: #b2b2b2;
+                        }
+
+                        &:focus {
+                            color: #b2b2b2;
+                            border-bottom: 2px solid #41ca90;
+                        }
+                    }
+
+                    #name {
+                        flex: 1;
+                        width: 100%;
+
+                        @include breakpoint(small-to-medium) {    
+                            margin-right: 20px;
+                        }
+
+                        @include breakpoint(medium-to-large) {    
+                            margin-right: 20px;
+                        }
+
+                        @include breakpoint(large-up) {    
+                            margin-right: 20px;
+                        }
+                    }
+
+                    #email {
+                        flex: 1;
+                        width: 100%;
+                    }
+
+                    #subject {
+                        flex: 1;
+                        width: 100%;
+                    }
+
+                    textarea {
+                        flex: 1;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        padding: 10px 0;
+                        background: transparent;
+                        border: none;
+                        border-bottom: 2px solid #b2b2b2;
+                        outline: none;
+                        position: relative;
+                        resize: none;
+                        transition: all ease .3s;
+
+                        &::placeholder {
+                            font-family: 'Montserrat';
+                            font-size: 11px;
+                            font-weight: 500;
+                            color: #b2b2b2;
+                            position: absolute;
+                            bottom: 10px;
+                        }
+
+                        &:focus {
+                            color: #b2b2b2;
+                            border-bottom: 2px solid #41ca90;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.map {
+    background: url('../images/map.png');
+    background-size: cover;
+    background-position: center;
+
+    .container {
+        padding: 50px 0;
+        @include flexCenter(row, center, center);
+        
+        @include breakpoint(small-to-medium) {  
+            @include flexCenter(row, flex-start, center);            
+        }
+
+        @include breakpoint(medium-to-large) {  
+            @include flexCenter(row, flex-start, center);            
+        }
+
+        @include breakpoint(large-up) {  
+            @include flexCenter(row, flex-start, center);            
+        }
+
+        .card-address {
+            width: 100%;
+            height: 340px;
+            background-color: #fff;
+            transition: all .3s linear;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(43, 42, 42, .3);
+            @include flexCenter(column, center, flex-start);
+
+            @include breakpoint(small-to-medium) {  
+                width: 500px;                
+            }
+
+            @include breakpoint(medium-to-large) { 
+                width: 500px;
+            }
+
+            @include breakpoint(large-up) { 
+                width: 500px;
+            }
+
+            .item {
+                height: 50px;
+                padding: 0 20px;
+                @include flexCenter(row, center, center);
+
+                i {
+                    padding: 8px;
+                    border-radius: 50%;
+                    font-size: 18px;
+                    background-color: #b4b3b3;
+                    color: $text-white;
+
+                    &.fa-map-marker-alt {
+                        padding: 8px 10px;
+                    }
+                }
+
+                p {
+                    color: #b4b3b3;
+                    margin-left: 15px;
+                    font-size: 11px;
+                    font-weight: 500;
+    
+                    @include breakpoint(medium-to-large) { 
+                        margin-top: 5px;
+                    }
+    
+                    @include breakpoint(large-up) { 
+                        margin-top: 5px;
+                    }
+                } 
+
+                a {
+                    color: #b4b3b3;
+                    font-size: 11px;
+                    font-weight: 500;
+                    margin-left: 15px;
+                }
+            }   
+        }
+    }
+}
