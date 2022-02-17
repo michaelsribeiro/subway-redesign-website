@@ -15,7 +15,7 @@
             @include flexCenter(column, initial, center);
             text-decoration: none;
             
-            &a:hover .product--add {
+            &:hover .product--add {
                 background-color: #cfa707;
             }
 
@@ -100,7 +100,7 @@
                 line-height: 30px;
                 font-size: 12px;
                 font-weight: bold;
-                color: #000;
+                color: #333;
                 padding: 0px 5px;
             }
         }
