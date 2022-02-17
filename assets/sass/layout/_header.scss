@@ -2,6 +2,7 @@
 @import "../abstract/breakpoint";
 @import "../abstract/variables";
 @import "../abstract/mixins";
+@import "../components/animations";
 
 header {
     position: fixed;
@@ -101,7 +102,7 @@ header {
                 
                 a {
                     color: #333;
-                    font-size: 13px;
+                    font-size: 12px;
                     font-weight: 600;
                     text-decoration: none;
                     text-transform: uppercase;
@@ -123,7 +124,7 @@ header {
                             background-color: #cfa707;
                         }
 
-                        .animation {
+                        &.animation {
                             animation-name: tada;
                             animation-duration: 1s;
                             animation-fill-mode: both;
@@ -133,7 +134,7 @@ header {
                     .nav-button {
                         display: inline-block;
 
-                        .cartBtn {
+                        &.cartBtn {
                             font-size: 20px;
                             color: #333;
                             position: relative;

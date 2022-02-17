@@ -4,186 +4,106 @@
 @import "../abstract/mixins";
 
 footer {
+    width: 100%;
 
-    &.dark {
-        background-color: $bg-color-primary;
+    .container {
+        padding: 30px 0;
+        @include flexCenter(column, initial, flex-start);
 
-        h1 {
-            color: $text-white;
+        .logo {
+            width: 100%;
+            margin-bottom: 50px;
+            @include flexCenter(row, center, center);
+            
+            img {
+                width: 190px;
+            }
         }
+        
+        .footer-menu {
+            width: 100%;
+            @include flexCenter(row, initial, flex-start);
 
-        p {
-            color: $text-white;
+            .firstMenu,
+            .secondMenu {
+                flex: 1;
+
+                h2 {
+                    text-transform: uppercase;
+                    font-size: 20px;    
+                    color: $text-color-secondary;
+                }
+
+                .footer-items {
+                    padding: 0;
+                    list-style: none;
+
+                    a {
+                        text-decoration: none;
+                        color: #333;
+                        font-weight: 600;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            color: $text-color-secondary;
+                        }
+
+                        .footer-button {
+                            padding: 5px 0;
+                        }
+                    }
+                }
+            }
+            
+            .socialMidias {
+                flex: 1;
+                @include flexCenter(column, center, center);
+
+                h2 {
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    color: $text-color-secondary;
+                }
+
+                .footer-items {
+                    list-style: none;
+                    padding: 0;
+
+                    a {    
+                        text-decoration: none;
+                        color: #333;
+                        font-weight: 600;
+
+                        .footer-button {
+                            display: inline-block;
+                            margin: 0 8px;
+
+                            i {
+                                color: #333;
+                                font-size: 20px;
+                                transition: all .3s ease;
+            
+                                &:hover {
+                                    color: $text-color-secondary;
+                                }
+                            }    
+                        }
+                    }
+                }               
+            }   
         }
     }
 
-    .container {
-        padding: 20px 0;
-        @include flexCenter(column, center, center);
-
-        @include breakpoint(medium-to-large) { 
-            @include flexCenter(row, center, center);
-        }
-
-        @include breakpoint(large-up) { 
-            @include flexCenter(row, center, center);
-        }
-
-        div {
-
-            @include breakpoint(medium-to-large) { 
-                &:nth-child(1) {order: 4;}
-                &:nth-child(3) {order: 3;}
-                &:nth-child(4) {order: 2;}
-            }  
-
-            @include breakpoint(large-up) { 
-                &:nth-child(1) {order: 4;}
-                &:nth-child(3) {order: 3;}
-                &:nth-child(4) {order: 2;}
-            }
-        }
-
-        .subscribe {
-            width: 100%;
-            background-color: #373737; 
-            padding: 50px;
-            @include flexCenter(column, center, center);
-
-            @include breakpoint(large-up) { 
-                padding: 40px 40px;
-            }
-
-            form {
-                width: 100%;
-
-                input, select, textarea{
-                    color: #b2b2b2;
-                }
-
-                .row {
-                    width: 100%;
-                    margin-bottom: 10px;
-                    @include flexCenter(column, flex-start, center);
-
-                    @include breakpoint(small-to-medium) {    
-                        @include flexCenter(row, flex-start, center);
-                    }
-
-                    @include breakpoint(medium-to-large) {    
-                        @include flexCenter(row, flex-start, center);
-                    }
-
-                    @include breakpoint(large-up) {    
-                        @include flexCenter(row, flex-start, center);
-                    }
-                }
-
-                input {
-                    width: 100%;
-                    margin-bottom: 20px;
-                    padding: 10px 0;
-                    background: transparent;
-                    border: none;
-                    border-bottom: 1px solid #b2b2b2;
-                    outline: none;
-                    text-align: center;
-                    transition: all ease .3s;
-
-                    &::placeholder {
-                        font-size: 12px;
-                        color: #b2b2b2;
-                    }
-
-                    &:focus {
-                        color: #b2b2b2;
-                        border-bottom: 1px solid #41ca90;
-                    }
-                }
-            }
-
-            button {
-                padding: 15px 50px;
-            }
-        }
-
-        .social-footer {
-
-            @include breakpoint(medium-to-large) { 
-                @include flexCenter(row, center, center);
-            }
-
-            @include breakpoint(large-up) { 
-                @include flexCenter(row, center, center);
-            }
-
-            i {
-                font-size: 18px;
-                color: $text-white;
-                padding: 10px;
-                background-color: #373737;
-                border-radius: 50%;
-                margin: 45px 0;
-                transition: all ease .3s;
-                cursor: pointer;
-
-                @include breakpoint(large-up) { 
-                    margin: 0;
-                }
-
-                &:nth-child(3) {
-                    padding: 10px 13px;
-                }
-
-                &:nth-child(2) {
-                    margin: 0 20px;
-                }
-
-                &:hover {
-                    background-color: $text-color-secondary;
-                }
-            }
-        }
-
-        .footer-text {
-
-            p {
-                font-size: 12px;
-                text-align: left;
-                color: #b2b2b2;
-                line-height: 2;
-
-                @include breakpoint(medium-to-large) { 
-                    width: 300px;
-                    margin-right: 30px;
-                    font-size: 10px;
-                }
-
-                @include breakpoint(large-up) { 
-                    width: 300px;
-                    margin-right: 30px;
-                    font-size: 10px;
-                }
-            }
-        }
-
-        .footer-copy {  
-            width: 100%; 
-            
-            .container {
-                @include flexCenter(row, center, center);
-                    
-                i {
-                    font-size: 12px;
-                    margin: 0 5px;
-                    color: #b2b2b2;
-                }
-
-                p {
-                    font-weight: 500;
-                }
-
-            }
-        }
+    .copy {
+        width: 100%;
+        height: 50px;
+        background-color: $text-color-secondary;
+        @include flexCenter(row, center, center);
+    }
+    
+    .copy .copyright {
+        margin: 0;
+        color: $text-white;
+        font-size: 13px;
     }
 }

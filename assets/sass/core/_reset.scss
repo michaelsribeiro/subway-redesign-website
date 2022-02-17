@@ -47,13 +47,14 @@ p {
     max-width: $container-width;
     width: 90%;
     margin: 0 auto;
+    height: 100%;
     @include flexCenter(row, center, center);
 }
 
 a,
 a:visited {
     text-decoration: none;
-    color: #fff;
+    color: $text-white;
 }
 
 a.active {

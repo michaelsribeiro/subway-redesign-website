@@ -1,0 +1,199 @@
+@import "../core/reset";
+@import "../abstract/breakpoint";
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+.modalArea {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    z-index: z-index(above);
+    transition: all ease .5s;
+
+    .productBody {
+        display: flex;
+        width: 900px;
+        height: 500px;
+        margin: 20px 0px;
+        border-radius: 10px;
+        background-color: $text-white;
+        box-shadow: 0px 0px 15px #999;
+
+        .productImgBig {
+            flex: 1;
+            @include flexCenter(row, center, center);
+
+            img {
+                height: 280px;
+                width: auto;
+            }
+        }
+
+        .productInfo {
+            flex: 1;
+            padding-bottom: 30px;
+            margin-right: 8px;
+            overflow-y: auto;
+            font-family: Subway, Helvetica, Arial;
+
+            h1 {
+                margin-top: 30px;
+            }
+
+            .productInfo--desc {
+                margin-top: 10px;
+                font-size: 15px;
+                color: #999;
+                font-family: Subway, Helvetica, Arial;
+            }
+
+            .wrapper {
+                overflow-x: hidden;
+                overflow-y: auto;
+
+                .productInfo--sector {
+                    color: #CCC;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    margin: 15px 0 10px;
+                }
+
+                .productInfo--sizes {
+                    display: inline-flex;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    .productInfo--size {
+                        padding:10px 15px;
+                        background-color: #EEE;
+                        color: #333;
+                        font-size: 13px;
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        span {
+                            font-size: 12px;
+                            color: #999;
+                            font-weight: normal;
+                        }
+
+                        &:hover {
+                            background-color: #CCC;
+                        }
+
+                        &.selected {
+                            background-color: $bg-color-terciary;
+                            color: $text-white;
+
+                            span {
+                                color: #D6D6D6;
+                            }
+                        }
+                    }
+                }     
+    
+                .productInfo--breadarea {
+                    width: 90%;
+    
+                    #bread {
+                        width: 100%;
+                        padding: 5px;
+                        outline: none;
+                    }
+                }
+                
+                .productInfo--saladarea {
+                    width: 90%;
+
+                    .productInfo--saladitem {
+                        display: flex;
+                        flex-direction: column;
+
+                        .productInfo--row {
+                            @include flexCenter(column, space-between, initial);
+
+                            .productInfo--rowItem {
+                                font-size: 13px;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+                
+                .productInfo--saucearea {
+                    width: 90%;
+                }
+
+                .productInfo--price {
+                    display: flex;
+                    align-items: center;
+
+                    .productInfo--actualPrice {
+                        font-size: 28px;
+                        margin-right: 30px;
+                    }
+
+                    .productInfo--qtarea {
+                        display: inline-flex;
+                        background-color: #EEE;
+                        border-radius: 10px;
+                        height: 30px;
+
+                        button {
+                            border: 0;
+                            outline: 0;
+                            padding: 0px 10px;
+                            background-color: transparent;
+                            font-size: 17px;
+                            color: #333;
+                            cursor: pointer;
+                        }
+
+                        .productInfo--qt {
+                            line-height: 30px;
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: #333;
+                            padding: 0px 5px;
+                        }
+                    }
+                }
+            }
+
+            .productInfo--addButton {
+                display: inline-block;
+                margin: 30px 30px 0 0;
+                padding: 20px 30px;
+                border-radius: 20px;
+                background-color: $bg-color-terciary;
+                color: #FFF;
+                cursor: pointer;
+
+                &:hover {
+                    background-color:#32a345;
+                }
+            }
+            
+            .productInfo--cancelButton {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .productInfo--cancelMobileButton {
+                display: none;
+                height: 40px;
+                margin-bottom: 30px;
+                text-align: center;
+                line-height: 40px;
+            }
+        }        
+    }
+}
