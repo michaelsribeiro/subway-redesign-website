@@ -541,6 +541,7 @@ footer .logo img {
     text-transform: uppercase;
     font-size: 14px;
     margin: 15px 10px 0 0;
+    padding-bottom: 10px;
 }
 .productInfo--sizes {
     display: inline-flex;
