@@ -38,7 +38,7 @@
 - Clone this repo:
   $ git clone https://github.com/michaelsribeiro/subway-redesign-website.git
 
-- Entre no diretório:
+- Then go to the project's folder:
   $ cd subway-redesign-website
 
 - Open your browser in:
