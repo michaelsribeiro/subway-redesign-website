@@ -1,17 +1,11 @@
 <p align="center">
-      <img src="assets/images/logo.png" width="30%" alt="Subway Logo"/>
+      <img src="assets/images/logo.png" width="40%" alt="Subway Logo"/>
 </p>
-
----
-
-<h2 align="center">"Subway Ecommerce". 🥳</h1>
-
----
 
 <h2 align="center">About 📖</h2>
    
    <p align="center">
-      This project is an ecommerce that makes life easier for the customer when ordering their Subway sandwich,<br> allowing them to order directly from the website,<br> without         the need for food delivery apps.<br>
+      This project is an ecommerce that makes life easier for the customer when ordering their Subway sandwich,<br> allowing them to order directly from the website,<br> without         need for food delivery apps.<br>
    </p>
    
 <h2 align="center">Preview 🖥️</h2>
