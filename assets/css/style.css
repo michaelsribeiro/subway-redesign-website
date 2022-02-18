@@ -204,7 +204,7 @@ header {
     text-align: center;
     margin: 40px 0;
 }
-.foodMenu .product-area {
+.product-area {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
 }
