@@ -17,7 +17,7 @@
 <h2 align="center">Preview 🖥️</h2>
 
    <p align="center">
-      <img src="assets/images/LAYOUT_DESKTOP.png" width="20%" alt="Subway Ecommerce Demo"/>
+      <img src="assets/images/LAYOUT_DESKTOP.png" width="60%" alt="Subway Ecommerce Demo"/>
    </p>
 
    > * See the project in action [`here`](https://subway-redesign-project.netlify.app/). 🧐
