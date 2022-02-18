@@ -98,7 +98,7 @@ subwayJson.map( (item, index) => {
     subwayItem.querySelector('.product--name').innerHTML = item.name;
     subwayItem.querySelector('a').addEventListener('click', (event) => {
         event.preventDefault();
-        document.querySelector('body').style.overflow = 'hidden';
+        document.querySelector('html').style.overflow = 'hidden';
         let key = event.target.closest('.product').getAttribute('data-key');
         quant = 1;
         pizzaKey = key;        $('input[type=checkbox]').prop('checked',false);
