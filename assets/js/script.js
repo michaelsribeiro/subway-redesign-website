@@ -125,7 +125,7 @@ function closeModal() {
     setTimeout( () => {
         document.querySelector('.modalArea').style.display = 'none';
     }, 200);
-    document.querySelector('body').style.overflow = 'visible';
+    document.querySelector('html').style.overflow = 'visible';
 }
 
 document.querySelectorAll('.productInfo--cancelButton, .productInfo--cancelMobileButton').forEach( (item) => {
