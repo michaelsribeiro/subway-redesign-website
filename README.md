@@ -5,7 +5,7 @@
 <h2 align="center">About 📖</h2>
    
    <p align="center">
-      This project is an ecommerce that makes life easier for the customer when ordering their Subway sandwich,<br> allowing them to order directly from the website,<br> without         the need for food delivery apps.<br>
+      This project is an ecommerce that makes life easier for the customer when ordering their Subway sandwich,<br> allowing them to order directly from the website,<br> without         need for food delivery apps.<br>
    </p>
    
 <h2 align="center">Preview 🖥️</h2>
