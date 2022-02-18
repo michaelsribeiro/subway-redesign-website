@@ -2,12 +2,6 @@
       <img src="assets/images/logo.png" width="30%" alt="Subway Logo"/>
 </p>
 
----
-
-<h2 align="center">"Subway Ecommerce". 🥳</h1>
-
----
-
 <h2 align="center">About 📖</h2>
    
    <p align="center">
