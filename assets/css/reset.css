@@ -1,0 +1,68 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-color:#fff; 
+    font-size: 15px;
+    font-family: Subway, sans-serif;
+}
+
+html {
+    box-sizing: border-box;    
+    overflow-x: hidden;   
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: Subway;
+    src: url("../fonts/Subway.woff2")
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+p {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding: 0;
+    margin: 0;
+} 
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+a.active {
+    color: #028940;
+}
