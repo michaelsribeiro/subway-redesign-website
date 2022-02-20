@@ -18,7 +18,8 @@ const buyButton = document.querySelector('.nav-bar a:last-child');
 buyButton.addEventListener('click', scrollOnClick);
 
 function getScrollTopByHref(element) {
-    const id = element.getAttribute('href');
+    const id = element.getAttribute("href");
+    console.log(document.querySelector(id).offsetTop);
     return document.querySelector(id).offsetTop;
 }
 
@@ -38,7 +39,7 @@ function scrollToPosition(to) {
 
 // => Open and Close Menu Mobile
 const toggleMenu = document.querySelector('.toggle');
-toggleMenu.addEventListener('click', () => {
+toggleMenu.addEventListener('click', function() {
     let menuMobile = document.querySelector('.header-menu');
     if (menuMobile.classList.contains('showMenuMobile')) {
         menuMobile.classList.remove('showMenuMobile');
@@ -46,7 +47,6 @@ toggleMenu.addEventListener('click', () => {
     } else {
         menuMobile.classList.add('showMenuMobile');
     }
-
     document.querySelectorAll('.nav-button').forEach((item) => {
         item.addEventListener('click', () => {
             menuMobile.classList.remove('showMenuMobile');
