@@ -19,7 +19,6 @@ buyButton.addEventListener('click', scrollOnClick);
 
 function getScrollTopByHref(element) {
     const id = element.getAttribute("href");
-    console.log(document.querySelector(id).offsetTop);
     return document.querySelector(id).offsetTop;
 }
 
